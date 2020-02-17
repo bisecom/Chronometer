@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menuLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/settingsTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="15dp"
+        android:text="   Action to be taken after touch the screen"
+        android:textSize="18sp" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/actionRadios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/start_pause_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="start/pause" />
+
+            <RadioButton
+                android:id="@+id/lap_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show lap times" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/themesTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eeeeee"
+        android:layout_marginBottom="15dp"
+        android:text="   Themes options:"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:weightSum="2" >
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/colorsRadios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/blackColorRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="green" />
+
+            <RadioButton
+                android:id="@+id/blueColorRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="blue" />
+            <RadioButton
+                android:id="@+id/grayColorRb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:gravity="left"
+                android:text="gray" />
+    </RadioGroup>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/themesRadios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/theme1Rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="theme 1" />
+
+                <RadioButton
+                    android:id="@+id/theme2Rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="theme 2" />
+
+                <RadioButton
+                    android:id="@+id/theme3Rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="theme 3" />
+    </RadioGroup>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="acceptTheme"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Accept Changes" />
+</LinearLayout>
