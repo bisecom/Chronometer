@@ -1,15 +1,12 @@
 package com.e.chronometer;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -60,21 +57,12 @@ public class MenuActivity extends AppCompatActivity {
                 colors = getRBName(colorsRG);
                 if (colors.equals("green")) {
                     menuLtTheme.setLayoutTheme(colors, menuLT, settingsTV, themesTV);
-                    /*menuLT.setBackgroundColor(Color.rgb(204, 255, 204));
-                    settingsTV.setBackgroundColor(Color.rgb(179, 255, 179));
-                    themesTV.setBackgroundColor(Color.rgb(179, 255, 179));*/
                 }
                 if (colors.equals("blue")) {
                     menuLtTheme.setLayoutTheme(colors, menuLT, settingsTV, themesTV);
-                    /*menuLT.setBackgroundColor(Color.rgb(179, 179, 255));
-                    settingsTV.setBackgroundColor(Color.rgb(102, 102, 255));
-                    themesTV.setBackgroundColor(Color.rgb(102, 102, 255));*/
                 }
                 if (colors.equals("gray")) {
                     menuLtTheme.setLayoutTheme(colors, menuLT, settingsTV, themesTV);
-                    /*menuLT.setBackgroundColor(Color.rgb(204, 204, 204));
-                    settingsTV.setBackgroundColor(Color.rgb(140, 140, 140));
-                    themesTV.setBackgroundColor(Color.rgb(140, 140, 140));*/
                 }
             }
         }
@@ -90,21 +78,12 @@ public class MenuActivity extends AppCompatActivity {
                 colors = getRBName(themesRG);
                 if (colors.equals("theme 1")) {
                     menuLtTheme.setLayoutTheme(colors, menuLT, settingsTV, themesTV);
-                    /*menuLT.setBackgroundResource(R.drawable.sea_green);
-                    settingsTV.setBackgroundColor(Color.rgb(179, 255, 179));
-                    themesTV.setBackgroundColor(Color.rgb(179, 255, 179));*/
                 }
                 if (colors.equals("theme 2")) {
                     menuLtTheme.setLayoutTheme(colors, menuLT, settingsTV, themesTV);
-                    /*menuLT.setBackgroundResource(R.drawable.kimo_gray);
-                    settingsTV.setBackgroundColor(Color.rgb(140, 140, 140));
-                    themesTV.setBackgroundColor(Color.rgb(140, 140, 140));*/
                 }
                 if (colors.equals("theme 3")) {
                     menuLtTheme.setLayoutTheme(colors, menuLT, settingsTV, themesTV);
-                    /*menuLT.setBackgroundResource(R.drawable.samuel_blue);
-                    settingsTV.setBackgroundColor(Color.rgb(102, 102, 255));
-                    themesTV.setBackgroundColor(Color.rgb(102, 102, 255));*/
                 }
             }
         }

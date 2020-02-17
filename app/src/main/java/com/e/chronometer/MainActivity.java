@@ -17,7 +17,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Chronometer mChronometer;
     private Button pause, start, reset, laps;
-    private String settings = "start/pause", colors = "gray";
+    private final String INITIAL_SETTING = "start/pause";
+    private String settings = INITIAL_SETTING, colors = "gray";
     private StringBuilder lapsedTime;
     private long pauseTime = 0, elapsedTime, lastLaps = 0;
     private TextView lapsTV;
@@ -30,17 +31,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainLayout = findViewById(R.id.mainLT);
-        try {
+        mainLtTheme = new ThemesSettings();
             Bundle arguments = getIntent().getExtras();
             if (arguments != null) {
                 settings = arguments.getString("settings");
                 colors = arguments.getString("theme");
-                mainLtTheme = new ThemesSettings();
+                if(colors != null)
                 mainLtTheme.setMainTheme(colors, mainLayout);
             }
-        } catch (Exception e) {
-            String ex = e.getLocalizedMessage();
-        }
         start = findViewById(R.id.startBtn);
         pause = findViewById(R.id.pauseBtn);
         pause.setVisibility(View.GONE);
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     public void buttonClickHandler(View view) {
         switch (view.getId()) {
             case R.id.pauseBtn:
-                if(settings.equals("start/pause")) {
+                if(settings.equals(INITIAL_SETTING)) {
                     start.setVisibility(View.VISIBLE);
                     reset.setVisibility(View.VISIBLE);
                     pause.setVisibility(View.GONE);
@@ -83,10 +81,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.startBtn:
                 mChronometer.setBase(SystemClock.elapsedRealtime());
-                mChronometer.start();
                 start.setVisibility(View.GONE);
                 pause.setVisibility(View.VISIBLE);
-                if(!settings.equals("start/pause")) {
+                if(!settings.equals(INITIAL_SETTING)) {
                     laps.setVisibility(View.VISIBLE);
                     reset.setVisibility(View.GONE);
                 }
@@ -109,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.lapsBtn:
                 long diffTime = elapsedTime - lastLaps;
-                if(lapsTV.getText().toString().equals("") || lapsTV == null){
+                if(lapsTV == null) return;
+                if(lapsTV.getText().toString().equals("")){
                     lapsTV.append(counter + ". " + DateFormat.format("mm:ss", elapsedTime).toString() + "\n");
                 }else{
                     lapsTV.append(counter + ". "
